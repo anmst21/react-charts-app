@@ -16,7 +16,17 @@ function App() {
           <AccordionPage />
         </Route>
         <Route path="/">
-          <DropdownPage />
+          <div className="flex flex-wrap ">
+            <div className="mr-5 mb-10">
+              <DropdownPage />
+            </div>
+            <div className="mr-5 mb-10">
+              <DropdownPage />
+            </div>
+            <div className="mr-5 mb-10">
+              <DropdownPage />
+            </div>
+          </div>
         </Route>
         <Route path="/buttons">
           <ButtonPage />

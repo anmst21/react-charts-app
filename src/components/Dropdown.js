@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { GoChevronDown } from "react-icons/go";
 import Panel from "./Panel";
+import _ from "lodash";
 
 function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const divEl = useRef();
+  console.log(options);
 
   useEffect(() => {
     const handler = (event) => {
@@ -22,7 +24,7 @@ function Dropdown({ options, value, onChange }) {
     return () => {
       document.removeEventListener("click", handler);
     };
-  }, []);
+  }, [isOpen]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -33,7 +35,7 @@ function Dropdown({ options, value, onChange }) {
     onChange(option);
   };
 
-  const renderedOptions = options.map((option) => {
+  const renderedOptions = _.map(options, (option) => {
     return (
       <div
         className="hover:bg-sky-100 rounded cursor-pointer p-1"
