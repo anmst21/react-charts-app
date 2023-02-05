@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Line, Bar, Pie } from "react-chartjs-2";
+import { Line, Bar, Radar } from "react-chartjs-2";
 import { Chart as ChartJs } from "chart.js/auto";
 import _ from "lodash";
 
-const ReChart = ({ data, valueOne, valueTwo, option }) => {
+const ReChart = ({ data, valueOne, valueTwo, option, chartType }) => {
+  console.log(chartType);
   const [chartDataOne, setChartDataOne] = useState({
     label: "",
     data: [],
@@ -69,11 +70,17 @@ const ReChart = ({ data, valueOne, valueTwo, option }) => {
     },
   };
 
-  return (
-    <div>
-      <Line options={options} data={preset} />
-    </div>
-  );
+  const renderChart = () => {
+    if (chartType === "line") {
+      return <Line options={options} data={preset} />;
+    } else if (chartType === "bar") {
+      return <Bar options={options} data={preset} />;
+    } else if (chartType === "radar") {
+      return <Radar options={options} data={preset} />;
+    }
+  };
+
+  return <div>{renderChart()}</div>;
 };
 
 export default ReChart;

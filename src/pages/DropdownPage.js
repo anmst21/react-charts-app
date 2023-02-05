@@ -3,7 +3,7 @@ import Dropdown from "../components/Dropdown";
 import ReChart from "../components/ReChart";
 import axios from "axios";
 
-function DropdownPage() {
+function DropdownPage({ chartType }) {
   const [options, setOptions] = useState([]);
   const [selectOne, setSelectOne] = useState("Chart One");
   const [selectTwo, setSelectTwo] = useState("Chart Two");
@@ -76,6 +76,7 @@ function DropdownPage() {
           valueTwo={selectTwo}
           data={options}
           option={selectOption}
+          chartType={chartType}
         />
       </div>
     </div>

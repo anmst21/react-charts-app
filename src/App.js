@@ -18,13 +18,13 @@ function App() {
         <Route path="/">
           <div className="flex flex-wrap ">
             <div className="mr-5 mb-10">
-              <DropdownPage />
+              <DropdownPage chartType={"line"} />
             </div>
             <div className="mr-5 mb-10">
-              <DropdownPage />
+              <DropdownPage chartType={"bar"} />
             </div>
             <div className="mr-5 mb-10">
-              <DropdownPage />
+              <DropdownPage chartType={"radar"} />
             </div>
           </div>
         </Route>
