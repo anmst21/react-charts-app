@@ -30,7 +30,7 @@ function App() {
         <Route path="/accordion">
           <AccordionPage />
         </Route>
-        <Route path="/">
+        <Route path="/charts">
           <div className="flex flex-wrap ">
             <div className="mr-5 mb-10">
               <DropdownPage options={options} chartType={"line"} />
@@ -55,7 +55,7 @@ function App() {
         <Route path="/counter">
           <CounterPage initialCount={0} />
         </Route>
-        <Route path="/landing">
+        <Route path="/">
           <Landing />
         </Route>
       </div>

@@ -2,8 +2,8 @@ import Link from "./Link";
 
 const Sidebar = () => {
   const links = [
-    { label: "Get Started", path: "/landing" },
-    { label: "Charts", path: "/" },
+    { label: "Get Started", path: "/" },
+    { label: "Charts", path: "/charts" },
   ];
   const renderedLinks = links.map((link) => {
     return (
