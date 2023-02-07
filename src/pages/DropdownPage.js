@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Dropdown from "../components/Dropdown";
 import ReChart from "../components/ReChart";
-import axios from "axios";
 
-function DropdownPage({ chartType }) {
-  const [options, setOptions] = useState([]);
+function DropdownPage({ chartType, options }) {
   const [selectOne, setSelectOne] = useState("Chart One");
   const [selectTwo, setSelectTwo] = useState("Chart Two");
   const [selectOption, setSelectOption] = useState("Select...");
-  console.log(options);
 
   const optionArray = [
     { name: "LnQ", value: "lnq" },
@@ -25,25 +22,6 @@ function DropdownPage({ chartType }) {
   const handleSelectOption = (option) => {
     setSelectOption(option.name);
   };
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios.get("http://localhost:4000/options");
-  //     setOptions(result.data);
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(
-        "https://charts-db-default-rtdb.europe-west1.firebasedatabase.app/options.json"
-      );
-      setOptions(result.data);
-    };
-    fetchData();
-  }, []);
 
   return (
     <div>

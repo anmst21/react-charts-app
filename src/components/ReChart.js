@@ -4,7 +4,6 @@ import { Chart as ChartJs } from "chart.js/auto";
 import _ from "lodash";
 
 const ReChart = ({ data, valueOne, valueTwo, option, chartType }) => {
-  console.log(chartType);
   const [chartDataOne, setChartDataOne] = useState({
     label: "",
     data: [],
@@ -27,7 +26,7 @@ const ReChart = ({ data, valueOne, valueTwo, option, chartType }) => {
 
   useEffect(() => {
     const filteredData = data.find((d) => d.name === valueTwo);
-    console.log(filteredData);
+
     if (filteredData) {
       setChartDataTwo({
         label: _.map(filteredData.data, "year"),

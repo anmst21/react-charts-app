@@ -6,7 +6,6 @@ import _ from "lodash";
 function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const divEl = useRef();
-  console.log(options);
 
   useEffect(() => {
     const handler = (event) => {
