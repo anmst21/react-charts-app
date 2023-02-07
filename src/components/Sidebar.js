@@ -4,6 +4,7 @@ const Sidebar = () => {
   const links = [
     { label: "Get Started", path: "/" },
     { label: "Charts", path: "/charts" },
+    { label: "Buttons", path: "/buttons" },
   ];
   const renderedLinks = links.map((link) => {
     return (
